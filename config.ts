@@ -1,12 +1,14 @@
-/* eslint-disable no-console */
 import * as process from 'process';
 
-if (!process.env.USER_EMAIL) {
-  console.error('USER_EMAIL env variable is not set.');
-  process.exit(1);
+export function getEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) {
+    throw new Error(`${name} env variable is not set.`);
+  }
+  return value;
 }
 
-if (!process.env.USER_PASSWORD) {
-  console.error('USER_PASSWORD env variable is not set.');
-  process.exit(1);
-}
+// Ensure required environment variables are present at startup
+getEnv('USER_EMAIL');
+getEnv('USER_PASSWORD');
+

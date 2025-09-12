@@ -1,6 +1,7 @@
 import { MainPage } from '../pageobjects/main.page';
 import { SignInPage } from '../pageobjects/signIn.page';
 import { test } from '@playwright/test';
+import { getEnv } from '../../config';
 
 export async function loginSteps(mainPage: MainPage, signInPage: SignInPage): Promise<void> {
   await test.step('Navigate to main page', async () => {
@@ -24,7 +25,7 @@ export async function loginSteps(mainPage: MainPage, signInPage: SignInPage): Pr
   });
 
   await test.step('Fill email field', async () => {
-    await signInPage.fillEmail(process.env.USER_EMAIL!);
+    await signInPage.fillEmail(getEnv('USER_EMAIL'));
   });
 
   await test.step('Click next button after email', async () => {
@@ -40,7 +41,7 @@ export async function loginSteps(mainPage: MainPage, signInPage: SignInPage): Pr
   });
 
   await test.step('Fill password field', async () => {
-    await signInPage.fillPassword(process.env.USER_PASSWORD!);
+    await signInPage.fillPassword(getEnv('USER_PASSWORD'));
   });
 
   await test.step('Click next button after password', async () => {
