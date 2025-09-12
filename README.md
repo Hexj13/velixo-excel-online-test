@@ -238,7 +238,6 @@ At the root folder we have these files:
 - [.gitignore](.gitignore) - file that specifies which files and directories to ignore in a Git repository
 - [config.ts](config.ts) - checks that environment variables are set; exits the process with an error if not
 - [eslint.config.ts](eslint.config.ts) - basic configuration file for [ESLint](https://eslint.org/)
-- [global-setup.ts](global-setup.ts) - [Playwright](https://playwright.dev/) global setup script
 - [playwright.config.ts](playwright.config.ts) - basic configuration file for [Playwright](https://playwright.dev/)
 - [prettier.config.cjs](prettier.config.cjs) - basic configuration file for [Prettier](https://prettier.io/)
 - [tsconfig.json](tsconfig.json) - basic configuration file for [TypeScript](https://www.typescriptlang.org/)
